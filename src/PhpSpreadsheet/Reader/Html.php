@@ -1014,7 +1014,7 @@ class Html extends BaseReader
             return;
         }
 
-        $src = urldecode($attributes['src']);
+        $src =  str_replace(' ','%20',urldecode($attributes['src']));
         $width = isset($attributes['width']) ? (float) $attributes['width'] : null;
         $height = isset($attributes['height']) ? (float) $attributes['height'] : null;
         $name = $attributes['alt'] ?? null;
